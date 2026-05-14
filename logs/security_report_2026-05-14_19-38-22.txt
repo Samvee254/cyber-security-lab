@@ -1,0 +1,26 @@
+==================================================
+   CYBER LAB - FULL SECURITY REPORT
+   Generated: 2026-05-14 19:38:22.349394
+==================================================
+
+--- SYSTEM STATS ---
+CPU Usage:    12.9%
+Memory Used:  39.6%
+Disk Used:    17.2%
+
+--- NETWORK CONNECTIONS ---
+  addr(ip='10.227.1.238', port=58234) --> addr(ip='34.107.243.93', port=443)
+  addr(ip='10.227.1.238', port=34014) --> addr(ip='172.64.148.235', port=443)
+
+--- LOGIN ATTACK CHECK ---
+WARNING: Failed logins detected!
+2026-05-14T18:02:25.282592+03:00 Samantha sudo:      sam : TTY=pts/0 ; PWD=/home/sam/Desktop/cyber-lab ; USER=root ; COMMAND=/usr/bin/grep 'Failed password' /var/lo/auth.log
+2026-05-14T19:38:40.592892+03:00 Samantha sudo:      sam : TTY=pts/0 ; PWD=/home/sam/Desktop/cyber-lab ; USER=root ; COMMAND=/usr/bin/grep 'Failed password' /var/log/auth.log
+
+
+--- DATA USAGE ---
+Sent:     62.57 MB
+Received: 1310.1 MB
+
+==================================================
+Report saved to: logs/security_report_2026-05-14_19-38-22.txt
