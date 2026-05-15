@@ -49,3 +49,7 @@ python3 scripts/security_report.py
 ![Security Dashboard] (dashboards/dashboard_screenshot.png)
 
 
+
+## 📸 Dashboard Preview
+
+![Security Dashboard](dashboards/dashboard_screenshot.png)
