@@ -44,3 +44,8 @@ pip3 install psutil --break-system-packages
 # Run full security report
 python3 scripts/security_report.py
 
+## Dashboard Preview
+
+![Security Dashboard] (dashboards/dashboard_screenshot.png)
+
+
