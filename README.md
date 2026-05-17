@@ -58,4 +58,20 @@ cd cyber-security-lab
 
 pip3 install psutil flask matplotlib --break-system-packages
 EOF
-EOF
+
+## 📊 Features
+- Login attack detection
+- CPU, memory and disk monitoring
+- Network connection tracking
+- AI anomaly detection
+- Automated security reports
+- Live web dashboard (Flask)
+
+## 📸 Dashboard Preview
+
+![Security Dashboard](dashboards/dashboard_screenshot.png)
+
+## 👩‍💻 Author
+**Samantha** | Cloud Computing & Information Security Student
+Data Engineering Student | Linux & AI Enthusiast
+Nairobi, Kenya 🇰🇪
