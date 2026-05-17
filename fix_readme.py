@@ -1,4 +1,4 @@
-# 🔐 AI-Powered Cybersecurity Monitoring Lab
+content = """# 🔐 AI-Powered Cybersecurity Monitoring Lab
 
 A real-time cybersecurity monitoring system built on Linux (Ubuntu) using Python.
 This project combines cybersecurity, cloud computing, data engineering, Linux,
@@ -36,3 +36,9 @@ Clone the repo and install dependencies, then run any script in the scripts/ fol
 **Samantha** | Cloud Computing & Information Security Student  
 Data Engineering Student | Linux & AI Enthusiast  
 Nairobi, Kenya 🇰🇪
+"""
+
+open('README.md', 'w').write(content)
+
+print('Done!')
+
