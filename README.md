@@ -57,7 +57,6 @@ git clone https://github.com/Samvee254/cyber-security-lab.git
 cd cyber-security-lab
 
 pip3 install psutil flask matplotlib --break-system-packages
-EOF
 
 ## 📊 Features
 - Login attack detection
