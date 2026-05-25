@@ -5,6 +5,9 @@ import subprocess
 import os
 import pickle
 import numpy as np
+import sys
+sys.path.insert(0, "/home/sam/Desktop/cyber-lab/scripts")
+from geo_attack import get_attack_map
 import json
 
 app = Flask(__name__, static_folder='/home/sam/Desktop/cyber-lab/static')
@@ -478,6 +481,30 @@ HTML = """
     </div>
 
     <!-- ⑦ PROJECT STRUCTURE -->
+
+    <div class="panel">
+        <h3>10. SYSTEM HEALTH</h3>
+        <p class="conn" style="color:#00ccff">CPU TEMPERATURES:</p>
+        {% for core, temp in cpu_temps.items() %}
+        <div class="metric">{{ core }}: {{ temp }}°C
+            <div class="bar-bg"><div class="bar {% if temp > 80 %}danger{% elif temp > 60 %}warn{% endif %}" style="width:{{ [temp, 100]|min }}%"></div></div>
+        </div>
+        {% endfor %}
+        <br>
+        <p class="conn" style="color:#00ccff">DISK I/O:</p>
+        <p class="conn">Read: {{ disk_read }} MB/s</p>
+        <p class="conn">Write: {{ disk_write }} MB/s</p>
+        <br>
+        <p class="conn" style="color:#00ccff">ATTACK ORIGIN MAP:</p>
+        {% if attack_map %}
+            {% for country, count in attack_map.items() %}
+            <p class="conn">{{ country }}: <span class="alert">{{ count }} attacks</span></p>
+            {% endfor %}
+        {% else %}
+            <p class="ok">✅ No attacks detected</p>
+        {% endif %}
+    </div>
+
     <div class="panel">
         <h3>7. PROJECT STRUCTURE</h3>
         <div class="tree">
@@ -697,6 +724,30 @@ def dashboard():
     except:
         login_attacks = []
 
+    # CPU temperatures
+    cpu_temps = {}
+    try:
+        temps = psutil.sensors_temperatures()
+        if "coretemp" in temps:
+            for t in temps["coretemp"]:
+                if "Core" in t.label:
+                    cpu_temps[t.label] = round(t.current, 1)
+    except:
+        cpu_temps = {"Core 0": 0}
+    # Disk I/O
+    try:
+        disk_io = psutil.disk_io_counters()
+        disk_read = round(disk_io.read_bytes / 1024 / 1024 / 1024, 2)
+        disk_write = round(disk_io.write_bytes / 1024 / 1024 / 1024, 2)
+    except:
+        disk_read = disk_write = 0
+    # Attack map
+    try:
+        from geo_attack import get_attack_map
+        attack_map = get_attack_map()
+    except:
+        attack_map = {}
+
     report_filename = save_report(now_str, cpu, memory, disk, connections, login_attacks, anomalies)
 
     return render_template_string(
@@ -714,6 +765,10 @@ def dashboard():
         baseline      = baseline,
         anomalies     = anomalies,
         cpu_history   = cpu_history,
+        cpu_temps      = cpu_temps,
+        disk_read      = disk_read,
+        disk_write     = disk_write,
+        attack_map     = attack_map,
         mem_history   = mem_history,
         time_labels   = time_history,
         report_filename = report_ts,
