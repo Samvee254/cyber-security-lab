@@ -46,3 +46,26 @@ Clone the repo and install dependencies, then run any script in the scripts/ fol
 **Samantha** | Cloud Computing & Information Security Student  
 Data Engineering Student | Linux & AI Enthusiast  
 Nairobi, Kenya 🇰🇪
+## 🍯 Honeypot + Attack Visualizer
+
+A fake SSH server that captures real brute-force attack attempts and visualizes them on a live dashboard.
+
+### Features
+- Fake SSH server on port 2222 using Paramiko
+- Captures attacker IP, country, username & password
+- Logs all attempts to JSON format
+- Live attack dashboard at `http://localhost:5001`
+- Auto-refreshes every 10 seconds
+
+### How to Run
+
+```bash
+# Terminal 1 — start the honeypot
+sudo python3 scripts/honeypot.py
+
+# Terminal 2 — start the attack dashboard
+python3 scripts/honeypot_dashboard.py
+```
+
+### Dashboard Preview
+![Honeypot Dashboard](screenshots/honeypot_dashboard.png)
