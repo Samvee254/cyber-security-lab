@@ -316,7 +316,10 @@ HTML = """
     </style>
 </head>
 <body>
-
+<div style="display:flex;gap:10px;margin-bottom:12px;border:1px solid #00ff88;padding:10px;background:#0d1117;border-radius:4px;">
+    <a href="http://localhost:5000" style="color:#00ccff;text-decoration:none;font-family:monospace;font-size:12px;padding:6px 14px;border:1px solid #00ccff;border-radius:3px;">🖥 System Monitor</a>
+    <a href="http://localhost:5001" style="color:#00ff88;text-decoration:none;font-family:monospace;font-size:12px;padding:6px 14px;border:1px solid #00ff88;border-radius:3px;">🍯 Honeypot Dashboard</a>
+</div>
 <!-- ═══════════════ HEADER ═══════════════ -->
 <div class="header">
     <div class="header-left">
