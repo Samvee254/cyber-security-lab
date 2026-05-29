@@ -69,3 +69,5 @@ python3 scripts/honeypot_dashboard.py
 
 ### Dashboard Preview
 ![Honeypot Dashboard](screenshots/honeypot_dashboard.png)
+### Live Attack Capture
+![Honeypot Live Attacks](screenshots/honeypot_with_attacks.png)
