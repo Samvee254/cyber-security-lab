@@ -41,7 +41,19 @@ Clone the repo and install dependencies, then run any script in the scripts/ fol
 ## 📸 Dashboard Preview
 
 ![Security Dashboard](dashboards/dashboard_screenshot.png)
+## 📸 Dashboard Preview
+![Security Dashboard](dashboards/dashboard_screenshot.png)
 
+## 📸 Screenshots
+
+### 🖥 Main System Monitor
+![Main Dashboard](screenshots/dashboard_with_navbar.png)
+
+### 🍯 Honeypot Attack Dashboard
+![Honeypot Dashboard](screenshots/honeypot_dashboard.png)
+
+### 🔴 Live Attack Capture (41 attacks)
+![Live Attacks](screenshots/honeypot_with_attacks.png)
 ## 👩‍💻 Author
 **Samantha** | Cloud Computing & Information Security Student  
 Data Engineering Student | Linux & AI Enthusiast  
